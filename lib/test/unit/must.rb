@@ -219,15 +219,17 @@ module Test::Unit::Must
         :assert_true, self, message
     end
 
-    # Implicitly handle negations for positive assertion methods
-    # that lack an explicitly defined negative assertion method.
-    def method_missing method, *arguments, &block
-      if method =~ /^(must_)(not_)/ and respond_to? positive = $1 + $'
-        $ebb6cc8f_e966_4d1f_969f_530ea365eb36.send :assert_fail_assertion do
-          __send__ positive, *arguments, &block
+    # define negative versions of positive assertion
+    # methods as needed to fill the gaps in this API
+    instance_methods(false).each do |method|
+      if method =~ /^must_(?!not_)/
+        unless method_defined? negative = 'must_not_' + $'
+          define_method negative do |*arguments, &block|
+            $ebb6cc8f_e966_4d1f_969f_530ea365eb36.send :assert_fail_assertion do
+              __send__ method, *arguments, &block
+            end
+          end
         end
-      else
-        super
       end
     end
   end
