@@ -176,6 +176,23 @@ Here is the mapping from test-unit-must assertions to [Test::Unit] assertions.
     def must_be_true message=nil
         assert_true self, message
 
+In addition, the following negative assertions are defined for completeness:
+
+    must_not_alias_method     is opposite of    must_alias_method
+    must_not_be_boolean       is opposite of    must_be_boolean
+    must_not_compare          is opposite of    must_compare
+    must_not_be_false         is opposite of    must_be_false
+    must_not_be_instance_of   is opposite of    must_be_instance_of
+    must_not_be_kind_of       is opposite of    must_be_kind_of
+    must_not_operate          is opposite of    must_operate
+    must_not_raise            is opposite of    must_raise
+    must_not_raise_kind_of    is opposite of    must_raise_kind_of
+    must_not_raise_message    is opposite of    must_raise_message
+    must_not_raise_nothing    is opposite of    must_raise_nothing
+    must_not_throw            is opposite of    must_throw
+    must_not_throw_nothing    is opposite of    must_throw_nothing
+    must_not_be_true          is opposite of    must_be_true
+
 ------------------------------------------------------------------------------
 License
 ------------------------------------------------------------------------------
