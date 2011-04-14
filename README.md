@@ -15,6 +15,8 @@ addition, it politely accommodates [Rails 3's ActiveSupport extensions to
 Test::Unit](
 http://rails.rubyonrails.org/classes/ActiveSupport/Testing/SetupAndTeardown/ForClassicTestUnit.html).
 
+[Vim syntax highlighting][test-unit-must.vim] support is also available.
+
 ------------------------------------------------------------------------------
 Installation
 ------------------------------------------------------------------------------
@@ -201,3 +203,4 @@ Released under the ISC license.  See the `lib/test/unit/must.rb` file.
 
 [Test::Unit]: http://test-unit.rubyforge.org/
 [MiniTest::Spec]: http://rubydoc.info/stdlib/minitest/
+[test-unit-must.vim]: https://github.com/sunaku/test-unit-must.vim
