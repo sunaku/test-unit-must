@@ -25,6 +25,18 @@
 
 require 'test/unit'
 
+# Provide singular versions of assertions in MiniTest so that we can write
+# `object.must_include` instead of having to write `object.must_includes`.
+module Test::Unit::Assertions
+  instance_methods.each do |method|
+    if singular = method[/^assert_\w+(?=s$)/]
+      unless method_defined? singular
+        alias_method singular, method
+      end
+    end
+  end
+end
+
 module Test::Unit::Must
   module CaptureCurrentTestCase
     def self.included target
