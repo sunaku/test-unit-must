@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'test-unit-must'
-  s.version     = '0.0.2'
+  s.version     = '0.1.0'
   s.author      = 'Suraj N. Kurapati'
   s.homepage    = 'http://github.com/sunaku/test-unit-must'
   s.summary     = 'Selfish "must" assertions for Test::Unit'
