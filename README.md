@@ -178,10 +178,10 @@ Here is the mapping from test-unit-must assertions to [Test::Unit] assertions.
     def must_not_be expected, message=nil
         assert_not_same expected, self, message
 
-    def must_receive send_array, message=nil
+    def must_accept send_array, message=nil
         assert_send [self] + send_array, message
 
-    def must_not_receive send_array, message=nil
+    def must_not_accept send_array, message=nil
         assert_not_send [self] + send_array, message
 
     def must_respond_to method, message=nil

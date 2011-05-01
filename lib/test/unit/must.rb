@@ -219,12 +219,12 @@ module Test::Unit::Must
         :assert_not_same, expected, self, message
     end
 
-    def must_receive send_array, message=nil
+    def must_accept send_array, message=nil
       $ebb6cc8f_e966_4d1f_969f_530ea365eb36.send \
         :assert_send, [self] + send_array, message
     end
 
-    def must_not_receive send_array, message=nil
+    def must_not_accept send_array, message=nil
       $ebb6cc8f_e966_4d1f_969f_530ea365eb36.send \
         :assert_not_send, [self] + send_array, message
     end
