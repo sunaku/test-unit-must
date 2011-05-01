@@ -4,16 +4,19 @@ test-unit-must adds object-oriented "must" aliases to [Test::Unit] assertions
 following [MiniTest::Spec] style except for replacing "wont" with "must_not".
 
 ------------------------------------------------------------------------------
+Prerequisites
+------------------------------------------------------------------------------
+
+* [Test::Unit] 2.0.1 or newer.
+
+------------------------------------------------------------------------------
 Compatibility
 ------------------------------------------------------------------------------
 
-test-unit-must was designed for [Test::Unit] 2.2.0.  However, I found that it
-works just as well with the MiniTest library bundled in Ruby 1.9.2! :-)  In
-addition, it politely accommodates [Rails 3's ActiveSupport extensions to
-Test::Unit](
-http://rails.rubyonrails.org/classes/ActiveSupport/Testing/SetupAndTeardown/ForClassicTestUnit.html).
+* Accomodates Ruby on Rails's [ActiveSupport extensions to Test::Unit](
+  http://rails.rubyonrails.org/classes/ActiveSupport/Testing/SetupAndTeardown/ForClassicTestUnit.html).
 
-[Vim syntax highlighting][test-unit-must.vim] support is also available.
+* [Vim syntax highlighting][test-unit-must.vim] is available as a plugin.
 
 ------------------------------------------------------------------------------
 Installation
