@@ -39,9 +39,19 @@ module Test::Unit::Must
   end
 
   module Assertions
+    def must_be_truth message=nil
+      $ebb6cc8f_e966_4d1f_969f_530ea365eb36.send \
+        :assert, self, message
+    end
+
     def must_alias_method alias_name, original_name, message=nil
       $ebb6cc8f_e966_4d1f_969f_530ea365eb36.send \
         :assert_alias_method, self, alias_name, original_name, message
+    end
+
+    def must_yield_truth message=nil
+      $ebb6cc8f_e966_4d1f_969f_530ea365eb36.send \
+        :assert_block, message, &self
     end
 
     def must_be_boolean message=nil
@@ -82,6 +92,11 @@ module Test::Unit::Must
     def must_not_equal expected, message=nil
       $ebb6cc8f_e966_4d1f_969f_530ea365eb36.send \
         :assert_not_equal, expected, self, message
+    end
+
+    def must_fail message=nil
+      $ebb6cc8f_e966_4d1f_969f_530ea365eb36.send \
+        :assert_fail_assertion, message, &self
     end
 
     def must_be_false message=nil
@@ -152,6 +167,26 @@ module Test::Unit::Must
     def must_operate operator, argument, message=nil
       $ebb6cc8f_e966_4d1f_969f_530ea365eb36.send \
         :assert_operator, self, operator, argument, message
+    end
+
+    def must_exist_in_filesystem message=nil
+      $ebb6cc8f_e966_4d1f_969f_530ea365eb36.send \
+        :assert_path_exist, self, message
+    end
+
+    def must_not_exist_in_filesystem message=nil
+      $ebb6cc8f_e966_4d1f_969f_530ea365eb36.send \
+        :assert_path_not_exist, self, message
+    end
+
+    def must_predicate predicate, message=nil
+      $ebb6cc8f_e966_4d1f_969f_530ea365eb36.send \
+        :assert_predicate, self, predicate, message
+    end
+
+    def must_not_predicate predicate, message=nil
+      $ebb6cc8f_e966_4d1f_969f_530ea365eb36.send \
+        :assert_not_predicate, self, predicate, message
     end
 
     def must_raise *arguments

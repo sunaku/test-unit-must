@@ -70,8 +70,14 @@ Reference
 
 Here is the mapping from test-unit-must assertions to [Test::Unit] assertions.
 
+    def must_be_truth message=nil
+        assert self, message
+
     def must_alias_method alias_name, original_name, message=nil
         assert_alias_method self, alias_name, original_name, message
+
+    def must_yield_truth message=nil
+        assert_block message, &self
 
     def must_be_boolean message=nil
         assert_boolean self, message
@@ -96,6 +102,9 @@ Here is the mapping from test-unit-must assertions to [Test::Unit] assertions.
 
     def must_not_equal expected, message=nil
         assert_not_equal expected, self, message
+
+    def must_fail message=nil
+        assert_fail_assertion message, &self
 
     def must_be_false message=nil
         assert_false self, message
@@ -139,6 +148,18 @@ Here is the mapping from test-unit-must assertions to [Test::Unit] assertions.
     def must_operate operator, argument, message=nil
         assert_operator self, operator, argument, message
 
+    def must_exist_in_filesystem message=nil
+        assert_path_exist self, message
+
+    def must_not_exist_in_filesystem message=nil
+        assert_path_not_exist self, message
+
+    def must_predicate predicate, message=nil
+        assert_predicate self, predicate, message
+
+    def must_not_predicate predicate, message=nil
+        assert_not_predicate self, predicate, message
+
     def must_raise *arguments
         assert_raise *arguments, &self
 
@@ -180,9 +201,12 @@ Here is the mapping from test-unit-must assertions to [Test::Unit] assertions.
 
 In addition, the following negative assertions are defined for completeness:
 
+    must_not_be_truth         is opposite of    must_be_truth
+    must_not_yield_truth      is opposite of    must_yield_truth
     must_not_alias_method     is opposite of    must_alias_method
     must_not_be_boolean       is opposite of    must_be_boolean
     must_not_compare          is opposite of    must_compare
+    must_not_fail             is opposite of    must_fail
     must_not_be_false         is opposite of    must_be_false
     must_not_be_instance_of   is opposite of    must_be_instance_of
     must_not_be_kind_of       is opposite of    must_be_kind_of
