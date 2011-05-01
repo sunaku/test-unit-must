@@ -1,9 +1,7 @@
 #         test-unit-must - Selfish "must" assertions for Test::Unit
 
-test-unit-must is a set of assertions for [Test::Unit] that treat the receiver
-of an assertion method call as the subject of the assertion.  In other words,
-these are [MiniTest::Spec]-style assertions, but their names only begin with
-`must_` or `must_not_`; there is no `wont_` or `refute_` prefix.
+test-unit-must adds object-oriented "must" aliases to [Test::Unit] assertions
+following [MiniTest::Spec] style except for replacing "wont" with "must_not".
 
 ------------------------------------------------------------------------------
 Compatibility
